@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 
-#card {
-   height:500px;
-   width:800px;
-   margin:5em auto;
-   position: fixed;
-  top: -15px;
-   left: 25%;
-   display:flex;
-   visibility:hidden;
-}
+
 #card h2 {
    font-size:3em;
    margin:0;
@@ -22,24 +13,36 @@
    padding-left: 30px; /* Espacio en blanco a la izquierda */
    padding-right: 30px; /* Espacio en blanco a la derecha */
 }
+/* --- Media Query para Escritorio y Tablets Grandes --- */
+@media (min-width: 768px) {
+    #card {
+        /* Vuelve a las propiedades de escritorio (posición fija solo si es necesario para el efecto original) */
+        width: 800px; 
+        height: 500px;
+        position: fixed; /* Ojo: Si el efecto requiere esto, se deja */
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%); /* Centrar mejor que con 'left: 25%' */
+        flex-wrap: nowrap; /* Evita que los lados se apilen en escritorio */
+    }
 
+    .side {
+        height: 550px;
+        width: 400px; 
+    }
 
-.side {
-   background:#eee;
-   height:550px;
-   width:400px;
-/*    border:1px solid red; */
-   padding:10px;
+    .side.one {
+        width: 320px;
+        /* Vuelve a aplicar la transformación específica de escritorio */
+        transform: skew(10deg, 20deg);
+    }
+    
+    .side.two {
+        /* Vuelve a aplicar la transformación específica de escritorio */
+        transform: skew(10deg, -15deg);
+    }
 }
-.side.one {
-   width:320px;
-   transform:skew(10deg,20deg);
-   background:linear-gradient(90deg, #fff, #fff 40%, #ddd);
-}
-.side.two {
-   transform:skew(10deg,-15deg);
-   background:linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
-}
+
 
 body {
    display: flex;
