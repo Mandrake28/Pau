@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 
+.side {
+    background: #eee;
+    height: auto; /* Que la altura se ajuste al contenido */
+    width: 100%; /* Ocupa todo el ancho disponible en la tarjeta */
+    max-width: 400px; /* Evita que crezca demasiado si hay espacio */
+    padding: 10px;
+    /* Eliminar o ajustar la transformación, ya que distorsionará el layout en móvil */
+    /* transform: skew(10deg, 20deg); (Eliminar en móvil) */
+}
 
+.side.one {
+    width: 100%; /* Ocupa todo el ancho disponible en la tarjeta */
+    /* Eliminar la transformación por defecto o ajustarla con Media Query */
+    /* transform: skew(10deg, 20deg); */
+    background: linear-gradient(90deg, #fff, #fff 40%, #ddd);
+}
+
+.side.two {
+    width: 100%; /* Ocupa todo el ancho disponible en la tarjeta */
+    /* Eliminar la transformación por defecto o ajustarla con Media Query */
+    /* transform: skew(10deg, -15deg); */
+    background: linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
+}
 #card h2 {
    font-size:3em;
    margin:0;
@@ -13,18 +35,7 @@
    padding-left: 30px; /* Espacio en blanco a la izquierda */
    padding-right: 30px; /* Espacio en blanco a la derecha */
 }
-/* --- Media Query para Escritorio y Tablets Grandes --- */
-@media (min-width: 768px) {
-    #card {
-        /* Vuelve a las propiedades de escritorio (posición fija solo si es necesario para el efecto original) */
-        width: 800px; 
-        height: 500px;
-        position: fixed; /* Ojo: Si el efecto requiere esto, se deja */
-        top: -15px;
-        left: 50%;
-        transform: translateX(-50%); /* Centrar mejor que con 'left: 25%' */
-        flex-wrap: nowrap; /* Evita que los lados se apilen en escritorio */
-    }
+
 
     .side {
         height: 550px;
@@ -172,4 +183,15 @@ body {
    transform: translateY(-50px);
  }
  
- 
+ /* --- Media Query para Escritorio y Tablets Grandes --- */
+@media (min-width: 768px) {
+    #card {
+        /* Vuelve a las propiedades de escritorio (posición fija solo si es necesario para el efecto original) */
+        width: 800px; 
+        height: 500px;
+        position: fixed; /* Ojo: Si el efecto requiere esto, se deja */
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%); /* Centrar mejor que con 'left: 25%' */
+        flex-wrap: nowrap; /* Evita que los lados se apilen en escritorio */
+    }
