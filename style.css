@@ -183,15 +183,3 @@ body {
    transform: translateY(-50px);
  }
  
- /* --- Media Query para Escritorio y Tablets Grandes --- */
-@media (min-width: 768px) {
-    #card {
-        /* Vuelve a las propiedades de escritorio (posición fija solo si es necesario para el efecto original) */
-        width: 800px; 
-        height: 500px;
-        position: fixed; /* Ojo: Si el efecto requiere esto, se deja */
-        top: -15px;
-        left: 50%;
-        transform: translateX(-50%); /* Centrar mejor que con 'left: 25%' */
-        flex-wrap: nowrap; /* Evita que los lados se apilen en escritorio */
-    }
